@@ -515,18 +515,70 @@ ul {
     }
 
     .hero-title {
-        font-size: 2.2rem;
-        left: 5%;
+        font-size: 1rem;
+        /* Smaller font */
+        left: 0;
+        /* Reset left since it's in hero-content */
+        margin-left: 0;
+        line-height: 1.7;
+        /* Adjusted line spacing */
+    }
+
+    .hero-sub {
+        font-size: 0.8rem;
+    }
+
+    .hero-logo-img {
+        width: 80px;
+        /* Slightly smaller logo */
+        margin-bottom: 1rem;
+    }
+
+    /* Mobile Hero Adjustment */
+    .hero {
+        height: auto;
+        /* Adapt to image height */
+        min-height: auto;
+    }
+
+    .hero-image {
+        position: relative;
+        /* Take up flow space */
+        height: auto;
+    }
+
+    .hero-image img {
+        height: auto;
+        width: 100%;
+        object-fit: contain;
+        /* proper aspect ratio */
+    }
+
+    .hero-content {
+        top: 40%;
+        left: 8%;
+        /* Moved slightly right from 5% */
+        /* Align left */
+        transform: translateY(-50%);
+        width: auto;
+        text-align: left;
+        padding: 0;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        /* Add shadow for readability */
     }
 
     .gallery-grid {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0;
     }
 
     .gallery-item,
     .gallery-item:last-child {
-        width: 100%;
-        aspect-ratio: 3/2;
+        width: 33.333%;
+        aspect-ratio: 1/1;
+        padding: 1px;
+        /* Optional: adds a tiny gap for visual separation */
     }
 
     .access-content {
@@ -535,13 +587,39 @@ ul {
     }
 
     .plan-list {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0;
     }
 
     .plan-item {
-        width: 100%;
-        max-width: 350px;
+        width: 32%;
+        max-width: none;
+        padding: 1rem 0.5rem;
+        /* Reduced padding */
+    }
+
+    /* Adjust font sizes for small cards */
+    .plan-name {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .plan-price {
+        font-size: 1rem;
+        flex-direction: column;
+        /* Stack price and tax */
+        gap: 0;
+        margin-bottom: 1rem;
+    }
+
+    .plan-price span {
+        font-size: 0.7rem;
+    }
+
+    .plan-desc p {
+        font-size: 0.75rem;
     }
 }
 
