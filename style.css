@@ -336,17 +336,16 @@ ul {
 }
 
 .plan-list {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    flex-wrap: wrap;
     margin-top: 3rem;
 }
 
 .plan-item {
     background-color: var(--color-white);
     padding: 3rem 2rem;
-    width: 300px;
+    width: 100%;
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
     transition: transform 0.3s ease;
@@ -464,6 +463,11 @@ ul {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Mobile Contact Section (Hidden on Desktop) */
+.contact-mobile {
+    display: none;
 }
 
 /* Mobile Responsive */
@@ -587,39 +591,48 @@ ul {
     }
 
     .plan-list {
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+        justify-content: center;
     }
 
     .plan-item {
-        width: 32%;
+        width: 100%;
         max-width: none;
-        padding: 1rem 0.5rem;
-        /* Reduced padding */
+        padding: 10px 2px;
+        /* Ultra compact for 3 cols */
     }
 
     /* Adjust font sizes for small cards */
     .plan-name {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
         margin-bottom: 0.5rem;
     }
 
     .plan-price {
-        font-size: 1rem;
+        font-size: 0.8rem;
         flex-direction: column;
         /* Stack price and tax */
+        align-items: center;
         gap: 0;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
 
     .plan-price span {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
 
     .plan-desc p {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
+    }
+
+    /* Show Contact on Mobile */
+    .contact-mobile {
+        display: block;
+        padding: 3rem 0;
+        background-color: #f9f9f9;
+        /* Slight bg to separate */
     }
 }
 
